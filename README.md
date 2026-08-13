@@ -79,13 +79,13 @@ Edit content mainly in `src/data.js` and `src/designs.js`.
 
 ---
 
-## GitHub Pages setup (already configured in this repo)
+## GitHub Pages setup (one-time)
 
-- Vite `base` is `/Andiswa-Cebekhulu-s-Portifolio/` in production
-- Routing uses `HashRouter` so deep links work on GitHub Pages
-- Workflow: `.github/workflows/deploy.yml`
+1. Open [repository Settings → Pages](https://github.com/DrPaks100/Andiswa-Cebekhulu-s-Portifolio/settings/pages)
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**
+3. Branch: **`gh-pages`** / folder: **`/ (root)`** → Save
 
-In the repo: **Settings → Pages → Source = GitHub Actions**.
+After that, the site is live at the URL above. Every later `git push` to `main` rebuilds and updates it automatically.
 
 ---
 
