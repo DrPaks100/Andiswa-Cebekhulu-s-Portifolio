@@ -10,7 +10,7 @@ export const profile = {
   phone: "071 555 5925",
   phoneHref: "tel:+27715555925",
   email: "andiswacebekhulu17@gmail.com",
-  cvUrl: "/Andiswa-Cebekhulu-CV.pdf",
+  cvUrl: `${import.meta.env.BASE_URL}Andiswa-Cebekhulu-CV.pdf`,
   languages: ["IsiZulu", "English"],
   about: [
     "I’m Andiswa Cebekhulu — a Software Developer creating impactful digital solutions.",
@@ -114,3 +114,4 @@ export const references = [
     detail: "Reference listed on CV",
   },
 ];
+
