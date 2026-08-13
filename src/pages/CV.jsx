@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import { profile, education, experience, techStack } from "../data";
+import { getCvHref } from "../utils/cvUrl";
 
 export default function Cv() {
+  const cvHref = typeof window !== "undefined" ? getCvHref() : profile.cvUrl;
+
   return (
     <section className="section cv-page">
       <div className="container cv-page__wrap">
         <div className="cv-page__actions no-print">
           <a
             className="btn btn--primary"
-            href={profile.cvUrl}
+            href={cvHref}
             download="Andiswa_Cebekhulu_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"

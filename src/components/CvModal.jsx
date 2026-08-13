@@ -1,9 +1,14 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiArrowDown, HiOutlineXMark } from "react-icons/hi2";
 import { profile } from "../data";
+import { getCvHref } from "../utils/cvUrl";
 
 export default function CvModal({ open, onClose }) {
+  const [cvHref, setCvHref] = useState(profile.cvUrl);
+  const [phoneUi, setPhoneUi] = useState(false);
+
   const onKey = useCallback(
     (e) => {
       if (!open) return;
@@ -11,6 +16,15 @@ export default function CvModal({ open, onClose }) {
     },
     [open, onClose]
   );
+
+  useEffect(() => {
+    setCvHref(getCvHref());
+    const mq = window.matchMedia("(max-width: 640px)");
+    const sync = () => setPhoneUi(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", onKey);
@@ -21,7 +35,9 @@ export default function CvModal({ open, onClose }) {
     };
   }, [open, onKey]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -51,8 +67,10 @@ export default function CvModal({ open, onClose }) {
               <div className="cv-modal__actions">
                 <a
                   className="cv-modal__download"
-                  href={profile.cvUrl}
+                  href={cvHref}
                   download="Andiswa_Cebekhulu_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <HiArrowDown size={15} aria-hidden />
                   Download
@@ -69,15 +87,44 @@ export default function CvModal({ open, onClose }) {
             </header>
 
             <div className="cv-modal__frame">
-              <iframe
-                title={`${profile.name} CV`}
-                src={`${profile.cvUrl}#toolbar=0&navpanes=0&view=FitH`}
-                className="cv-modal__iframe"
-              />
+              {phoneUi ? (
+                <div className="cv-modal__fallback">
+                  <p>
+                    This phone browser can’t preview PDFs inside the page. Use
+                    the same CV file via Download or Open below.
+                  </p>
+                  <div className="cv-modal__fallback-actions">
+                    <a
+                      className="btn btn--primary"
+                      href={cvHref}
+                      download="Andiswa_Cebekhulu_CV.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download CV
+                    </a>
+                    <a
+                      className="btn btn--ghost"
+                      href={cvHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open CV
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  title={`${profile.name} CV`}
+                  src={cvHref}
+                  className="cv-modal__iframe"
+                />
+              )}
             </div>
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
