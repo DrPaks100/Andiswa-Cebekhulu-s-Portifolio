@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiArrowDown } from "react-icons/hi2";
-import CvModal from "./CvModal";
+import { profile } from "../data";
+import { getCvHref } from "../utils/cvUrl";
 
 export default function CvButton({ className = "cv-chip", children }) {
-  const [open, setOpen] = useState(false);
+  const [cvHref, setCvHref] = useState(profile.cvUrl);
+
+  useEffect(() => {
+    setCvHref(getCvHref());
+  }, []);
 
   return (
-    <>
-      <button type="button" className={className} onClick={() => setOpen(true)}>
-        {children ?? (
-          <>
-            <span>Download my CV</span>
-            <HiArrowDown size={16} aria-hidden />
-          </>
-        )}
-      </button>
-      <CvModal open={open} onClose={() => setOpen(false)} />
-    </>
+    <a
+      className={className}
+      href={cvHref}
+      download="Andiswa_Cebekhulu_CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children ?? (
+        <>
+          <span>Download my CV</span>
+          <HiArrowDown size={16} aria-hidden />
+        </>
+      )}
+    </a>
   );
 }
