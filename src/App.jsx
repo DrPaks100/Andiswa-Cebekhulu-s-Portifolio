@@ -7,7 +7,7 @@ import Journey from "./pages/Journey";
 import Projects from "./pages/Projects";
 import Design from "./pages/Design";
 import Contact from "./pages/Contact";
-import Cv from "./pages/Cv";
+import Cv from "./pages/CV";
 import "./App.css";
 
 export default function App() {
