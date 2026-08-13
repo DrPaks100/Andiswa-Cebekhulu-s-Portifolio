@@ -13,8 +13,6 @@ export default function Cv() {
             className="btn btn--primary"
             href={cvHref}
             download="Andiswa_Cebekhulu_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Download CV (PDF)
           </a>
