@@ -15,7 +15,7 @@ export const profile = {
   about: [
     "I’m Andiswa Cebekhulu — a Software Developer creating impactful digital solutions.",
     "Skilled in software development, user interface design, database management, and technical problem-solving. I support both the creative and technical sides of IT — from full-stack development to system support and design.",
-    "I completed an IT internship at The API House (August 2024 – August 2025), and I’m dedicated to continuous learning and delivering reliable, high-quality work.",
+    "I completed an IT internship at Innovations (August 2024 – August 2025), and I’m dedicated to continuous learning and delivering reliable, high-quality work.",
   ],
 };
 
@@ -45,7 +45,7 @@ export const education = [
 export const experience = [
   {
     title: "IT Intern",
-    org: "The API House",
+    org: "Innovations",
     period: "August 2024 – August 2025",
     detail:
       "Developed and maintained websites and applications (web & mobile). Wrote clean, efficient code using modern languages and frameworks. Integrated APIs and managed databases. Supported digital marketing, event tech setup, automation, content management, and student recruitment / alumni engagement initiatives.",
@@ -57,7 +57,7 @@ export const projects = [
     title: "Web & mobile application builds",
     type: "Internship · Academic",
     description:
-      "Developed and maintained websites and applications during The API House internship — including API integration, database work, and responsive UI.",
+      "Developed and maintained websites and applications during the Innovations internship — including API integration, database work, and responsive UI.",
     tags: ["Web", "Mobile", "APIs", "Databases"],
   },
   {
