@@ -30,7 +30,7 @@ import nodeLogo from "../assets/icons/nodejs-official.svg";
 import dockerLogo from "../assets/icons/docker-official.svg";
 import linuxLogo from "../assets/icons/linux-official.svg";
 import figmaLogo from "../assets/icons/figma-logo.png";
-import mongodbLogo from "../assets/icons/mongodb-logo.png";
+import mongodbLogo from "../assets/icons/mongodb-official.svg";
 
 function CanvaMark({ size = 28 }) {
   return (
