@@ -11,11 +11,8 @@ export default function About() {
       <div className="container about__grid">
         <div className="about__portrait">
           <div className="about__stage">
-            {/* Animated atmosphere — no box, only floating light & smoke */}
+            {/* Soft glow + smoke only — no ring/box outlines */}
             <div className="about__halo" aria-hidden />
-            <div className="about__orbit about__orbit--a" aria-hidden />
-            <div className="about__orbit about__orbit--b" aria-hidden />
-            <div className="about__orbit about__orbit--c" aria-hidden />
             <div className="about__tornado about__tornado--1" aria-hidden />
             <div className="about__tornado about__tornado--2" aria-hidden />
             <div className="about__tornado about__tornado--3" aria-hidden />
