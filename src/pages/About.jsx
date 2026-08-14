@@ -9,37 +9,42 @@ export default function About() {
   return (
     <section className="section about">
       <div className="container about__grid">
-        <motion.div
-          className="about__portrait"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <div className="about__stage" aria-hidden={false}>
-            <div className="about__mist about__mist--back" aria-hidden />
-            <div className="about__mist about__mist--mid" aria-hidden />
-            <div className="about__mist about__mist--front" aria-hidden />
-            <div className="about__embers" aria-hidden />
-            <div className="about__aura" aria-hidden />
+        <div className="about__portrait">
+          <div className="about__stage">
+            {/* Animated atmosphere — no box, only floating light & smoke */}
+            <div className="about__halo" aria-hidden />
+            <div className="about__orbit about__orbit--a" aria-hidden />
+            <div className="about__orbit about__orbit--b" aria-hidden />
+            <div className="about__orbit about__orbit--c" aria-hidden />
+            <div className="about__tornado about__tornado--1" aria-hidden />
+            <div className="about__tornado about__tornado--2" aria-hidden />
+            <div className="about__tornado about__tornado--3" aria-hidden />
+            <div className="about__sparks" aria-hidden />
+            <div className="about__ground-smoke" aria-hidden />
 
             <motion.div
               className="about__figure"
+              style={{ transformStyle: "preserve-3d" }}
               initial={{
                 opacity: 0,
-                y: 56,
-                scale: 0.88,
-                filter: "blur(22px) brightness(0.35)",
+                y: 140,
+                scale: 0.15,
+                rotate: -720,
+                filter: "blur(18px) brightness(0.2)",
               }}
               animate={{
                 opacity: 1,
                 y: 0,
                 scale: 1,
+                rotate: 0,
                 filter: "blur(0px) brightness(1)",
               }}
               transition={{
-                duration: 1.65,
-                delay: 0.28,
+                duration: 2.4,
+                delay: 0.15,
                 ease: [0.16, 1, 0.3, 1],
+                opacity: { duration: 1.6, delay: 0.35 },
+                filter: { duration: 1.8, delay: 0.5 },
               }}
             >
               <img
@@ -47,18 +52,9 @@ export default function About() {
                 src={portrait}
                 alt={`${profile.name} — professional portrait`}
               />
-              <span className="about__rim" aria-hidden />
             </motion.div>
-
-            <motion.div
-              className="about__veil"
-              aria-hidden
-              initial={{ opacity: 0.95 }}
-              animate={{ opacity: 0.18 }}
-              transition={{ duration: 2.1, delay: 0.45, ease: "easeOut" }}
-            />
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 18 }}
