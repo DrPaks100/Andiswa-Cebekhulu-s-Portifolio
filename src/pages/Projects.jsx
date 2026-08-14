@@ -26,43 +26,11 @@ export default function Projects() {
         <div className="projects__list">
           {projects.map((p, i) => {
             const thumb = p.image ? projectImages[p.image] : null;
-            const body = (
-              <>
-                {thumb && (
-                  <img
-                    className="project__thumb"
-                    src={thumb}
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
-                )}
-                <div className="project__body">
-                  <p className="project__type">{p.type}</p>
-                  <h2 className="project__title">
-                    {p.title}
-                    {p.url && (
-                      <HiArrowTopRightOnSquare
-                        className="project__ext"
-                        size={16}
-                        aria-hidden
-                      />
-                    )}
-                  </h2>
-                  <p className="project__desc">{p.description}</p>
-                  <ul className="project__tags">
-                    {p.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            );
 
             return (
               <motion.article
                 key={p.title}
-                className="project"
+                className={`project${p.url ? " project--link" : ""}`}
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.08 + i * 0.08 }}
@@ -70,18 +38,56 @@ export default function Projects() {
                 <div className="project__index" aria-hidden>
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                {p.url ? (
-                  <a
-                    className="project__link"
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {body}
-                  </a>
-                ) : (
-                  body
-                )}
+
+                <div className="project__main">
+                  {thumb && (
+                    <img
+                      className="project__thumb"
+                      src={thumb}
+                      alt=""
+                      width={44}
+                      height={44}
+                    />
+                  )}
+
+                  <div className="project__body">
+                    <div className="project__topline">
+                      <p className="project__type">{p.type}</p>
+                      {p.url && (
+                        <a
+                          className="project__open"
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open ${p.title}`}
+                        >
+                          Open
+                          <HiArrowTopRightOnSquare size={15} aria-hidden />
+                        </a>
+                      )}
+                    </div>
+
+                    <h2 className="project__title">{p.title}</h2>
+                    <p className="project__desc">{p.description}</p>
+                    <ul className="project__tags">
+                      {p.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+
+                    {p.url && (
+                      <a
+                        className="project__open project__open--block"
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit live project
+                        <HiArrowTopRightOnSquare size={16} aria-hidden />
+                      </a>
+                    )}
+                  </div>
+                </div>
               </motion.article>
             );
           })}

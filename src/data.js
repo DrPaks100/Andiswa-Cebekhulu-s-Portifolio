@@ -23,9 +23,9 @@ export const education = [
   {
     title: "Advanced Diploma in Information Technology",
     school: "Mangosuthu University of Technology",
-    period: "In progress",
+    period: "Completed",
     detail:
-      "Advancing skills in modern application design, development practices, and delivery.",
+      "Completed studies in modern application design, development practices, and delivery.",
   },
   {
     title: "Diploma in Information Technology",
