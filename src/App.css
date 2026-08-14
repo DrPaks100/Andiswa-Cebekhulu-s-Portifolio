@@ -97,14 +97,17 @@
 
 .nav__fullname {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: baseline;
   gap: 0.3rem;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .nav__firstname,
 .nav__surname {
-  font-size: clamp(0.92rem, 3vw, 1.05rem);
+  font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+  white-space: nowrap;
 }
 
 .nav__surname {
@@ -135,6 +138,7 @@
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
   border: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .nav__home:hover {
@@ -142,11 +146,6 @@
   background: var(--accent-soft);
 }
 
-@media (max-width: 420px) {
-  .nav__mark {
-    display: none;
-  }
-}
 
 /* ——— Home ——— */
 .home {
