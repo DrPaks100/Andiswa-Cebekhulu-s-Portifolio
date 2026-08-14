@@ -3,48 +3,26 @@ import { motion } from "framer-motion";
 import { HiArrowDown } from "react-icons/hi2";
 import { profile } from "../data";
 import CvButton from "../components/CvButton";
-import portrait from "../assets/andiswa-cutout.png";
+import portrait from "../assets/andiswa.jpg";
 
 export default function About() {
   return (
     <section className="section about">
       <div className="container about__grid">
-        <div className="about__portrait">
-          <div className="about__stage">
-            {/* Soft glow + smoke only — no ring/box outlines */}
-            <div className="about__halo" aria-hidden />
-            <div className="about__tornado about__tornado--1" aria-hidden />
-            <div className="about__tornado about__tornado--2" aria-hidden />
-            <div className="about__tornado about__tornado--3" aria-hidden />
-            <div className="about__sparks" aria-hidden />
-            <div className="about__ground-smoke" aria-hidden />
-
-            <motion.div
-              className="about__figure"
-              initial={{
-                opacity: 0,
-                y: 160,
-                filter: "blur(14px) brightness(0.35)",
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px) brightness(1)",
-              }}
-              transition={{
-                duration: 1.8,
-                delay: 0.12,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              <img
-                className="about__photo"
-                src={portrait}
-                alt={`${profile.name} — professional portrait`}
-              />
-            </motion.div>
+        <motion.div
+          className="about__portrait"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="about__frame">
+            <img
+              className="about__photo"
+              src={portrait}
+              alt={`${profile.name} — professional portrait`}
+            />
           </div>
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 18 }}
