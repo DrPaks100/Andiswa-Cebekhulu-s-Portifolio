@@ -21,27 +21,20 @@ export default function About() {
 
             <motion.div
               className="about__figure"
-              style={{ transformStyle: "preserve-3d" }}
               initial={{
                 opacity: 0,
-                y: 140,
-                scale: 0.15,
-                rotate: -720,
-                filter: "blur(18px) brightness(0.2)",
+                y: 160,
+                filter: "blur(14px) brightness(0.35)",
               }}
               animate={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
-                rotate: 0,
                 filter: "blur(0px) brightness(1)",
               }}
               transition={{
-                duration: 2.4,
-                delay: 0.15,
+                duration: 1.8,
+                delay: 0.12,
                 ease: [0.16, 1, 0.3, 1],
-                opacity: { duration: 1.6, delay: 0.35 },
-                filter: { duration: 1.8, delay: 0.5 },
               }}
             >
               <img
