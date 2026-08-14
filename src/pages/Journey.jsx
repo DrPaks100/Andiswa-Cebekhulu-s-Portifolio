@@ -54,16 +54,17 @@ export default function Journey() {
             transition={{ duration: 0.65 }}
           >
             <p className="section-label">Experience</p>
-            <h2 className="section-title">Internship</h2>
+            <h2 className="section-title">WIL & internship</h2>
             <p className="section-lead">
-              Practical work through MUT&apos;s Innovations Lab.
+              Work Integrated Learning, then an IT internship, through
+              MUT&apos;s Innovations Lab.
             </p>
           </motion.div>
 
           <div className="edu-list edu-list--tight">
             {experience.map((job, i) => (
               <motion.article
-                key={job.title}
+                key={`${job.title}-${job.period}`}
                 className="edu-card"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}

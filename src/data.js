@@ -15,7 +15,7 @@ export const profile = {
   about: [
     "I’m Andiswa Cebekhulu — a Software Developer creating impactful digital solutions.",
     "Skilled in software development, user interface design, database management, and technical problem-solving. I support both the creative and technical sides of IT — from full-stack development to system support and design.",
-    "I completed an IT internship at Innovations (August 2024 – August 2025), and I’m dedicated to continuous learning and delivering reliable, high-quality work.",
+    "I completed Work Integrated Learning (WIL) and an IT internship at Innovations (August 2024 – July 2026), and I’m dedicated to continuous learning and delivering reliable, high-quality work.",
   ],
 };
 
@@ -46,23 +46,30 @@ export const experience = [
   {
     title: "IT Intern",
     org: "Innovations",
-    period: "August 2024 – August 2025",
+    period: "1 August 2025 – 31 July 2026",
     detail:
-      "Developed and maintained websites and applications (web & mobile). Wrote clean, efficient code using modern languages and frameworks. Integrated APIs and managed databases. Supported digital marketing, event tech setup, automation, content management, and student recruitment / alumni engagement initiatives.",
+      "Internship after WIL. Developed and maintained websites and applications (web & mobile). Wrote clean, efficient code using modern languages and frameworks. Integrated APIs and managed databases. Supported digital marketing, event tech setup, automation, content management, and student recruitment / alumni engagement initiatives.",
+  },
+  {
+    title: "Work Integrated Learning (WIL)",
+    org: "Innovations",
+    period: "1 August 2024 – 31 July 2025",
+    detail:
+      "University Work Integrated Learning placement. Applied ICT and software skills in a real workplace — contributing to websites, applications, databases, and day-to-day digital support before moving into the full IT internship.",
   },
 ];
 
 export const projects = [
   {
     title: "Web & mobile application builds",
-    type: "Internship · Academic",
+    type: "WIL · Internship · Academic",
     description:
-      "Developed and maintained websites and applications during the Innovations internship — including API integration, database work, and responsive UI.",
+      "Developed and maintained websites and applications during WIL and the Innovations internship — including API integration, database work, and responsive UI.",
     tags: ["Web", "Mobile", "APIs", "Databases"],
   },
   {
     title: "Digital platforms & content systems",
-    type: "Internship",
+    type: "WIL · Internship",
     description:
       "Supported online visibility, content management, automation, and user-friendly interface design for institutional and engagement initiatives.",
     tags: ["UI", "Digital Marketing", "Automation"],
