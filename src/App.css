@@ -729,155 +729,36 @@
 
 @media (min-width: 800px) {
   .about__grid {
-    grid-template-columns: 1fr 1.05fr;
-    gap: 3rem;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3.5rem;
   }
 }
 
 .about__portrait {
   justify-self: center;
   width: 100%;
-  max-width: 320px;
+  max-width: 200px;
 }
 
-/* Soft stage — no box, no border, no card edges */
-.about__stage {
+.about__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1.25;
-  perspective: 900px;
-  overflow: visible;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  border: none;
   background: transparent;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.about__halo {
-  position: absolute;
-  left: 50%;
-  top: 28%;
-  width: 78%;
-  height: 42%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, rgba(180, 210, 255, 0.35) 28%, rgba(123, 94, 167, 0.2) 52%, transparent 72%);
-  filter: blur(10px);
-  z-index: 0;
-  pointer-events: none;
-  animation: halo-pulse 3.2s ease-in-out infinite alternate;
-}
-
-.about__tornado {
-  position: absolute;
-  left: 50%;
-  bottom: -4%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  filter: blur(10px);
-}
-
-.about__tornado--1 {
-  width: 95%;
-  height: 55%;
-  z-index: 2;
-  background:
-    conic-gradient(from 0deg, transparent, rgba(123, 94, 167, 0.35), transparent 40%, rgba(61, 106, 158, 0.3), transparent 70%);
-  animation: tornado-spin 4.5s linear infinite;
-}
-
-.about__tornado--2 {
-  width: 72%;
-  height: 48%;
-  z-index: 3;
-  background:
-    conic-gradient(from 90deg, transparent, rgba(255, 255, 255, 0.18), transparent 35%, rgba(180, 140, 255, 0.28), transparent 65%);
-  animation: tornado-spin 3.2s linear infinite reverse;
-  filter: blur(14px);
-}
-
-.about__tornado--3 {
-  width: 48%;
-  height: 40%;
-  z-index: 3;
-  background:
-    conic-gradient(from 180deg, transparent, rgba(212, 196, 240, 0.4), transparent 45%);
-  animation: tornado-spin 2.4s linear infinite;
-  filter: blur(8px);
-  opacity: 0.85;
-}
-
-.about__sparks {
-  position: absolute;
-  inset: 8% 5% 12%;
-  z-index: 2;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, #fff 0 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(212, 196, 240, 0.95) 0 1.2px, transparent 1.6px),
-    radial-gradient(circle, rgba(123, 94, 167, 0.8) 0 1px, transparent 1.4px);
-  background-size: 70px 100px, 95px 130px, 55px 85px;
-  opacity: 0.65;
-  animation: sparks-rise 6s linear infinite;
-  mask-image: radial-gradient(ellipse 60% 70% at 50% 55%, #000 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 55%, #000 20%, transparent 75%);
-}
-
-.about__ground-smoke {
-  position: absolute;
-  left: 50%;
-  bottom: -8%;
-  width: 130%;
-  height: 48%;
-  transform: translateX(-50%);
-  z-index: 5;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 60% at 50% 80%, rgba(8, 16, 32, 0.95), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 30% 70%, rgba(90, 120, 180, 0.35), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 70% 75%, rgba(123, 94, 167, 0.4), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 90%, rgba(200, 210, 230, 0.16), transparent 70%);
-  filter: blur(16px);
-  animation: smoke-breathe 5.5s ease-in-out infinite alternate;
-}
-
-.about__figure {
-  position: relative;
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  will-change: transform, filter, opacity;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(197, 208, 224, 0.1);
 }
 
 .about__photo {
-  width: 90%;
-  height: auto;
-  max-height: 94%;
-  object-fit: contain;
-  object-position: center bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
   display: block;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  outline: none !important;
-  box-shadow: none !important;
-  -webkit-mask-image:
-    radial-gradient(ellipse 72% 78% at 50% 42%, #000 42%, rgba(0, 0, 0, 0.85) 58%, rgba(0, 0, 0, 0.35) 72%, transparent 86%),
-    linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.55) 75%, transparent 100%);
-  mask-image:
-    radial-gradient(ellipse 72% 78% at 50% 42%, #000 42%, rgba(0, 0, 0, 0.85) 58%, rgba(0, 0, 0, 0.35) 72%, transparent 86%),
-    linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.55) 75%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-  filter:
-    drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))
-    drop-shadow(0 0 32px rgba(160, 190, 255, 0.8))
-    drop-shadow(0 0 64px rgba(123, 94, 167, 0.75));
 }
 
 .about__text {
@@ -890,54 +771,6 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
-}
-
-@keyframes halo-pulse {
-  from {
-    opacity: 0.65;
-    transform: translate(-50%, -50%) scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.08);
-  }
-}
-
-@keyframes tornado-spin {
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-@keyframes sparks-rise {
-  from {
-    background-position: 12% 90%, 70% 85%, 40% 95%;
-    opacity: 0.35;
-  }
-  to {
-    background-position: 18% 25%, 64% 20%, 46% 30%;
-    opacity: 0.8;
-  }
-}
-
-@keyframes smoke-breathe {
-  from {
-    transform: translateX(-50%) scale(1) translateY(4%);
-    opacity: 0.85;
-  }
-  to {
-    transform: translateX(-50%) scale(1.08) translateY(-2%);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about__halo,
-  .about__tornado,
-  .about__sparks,
-  .about__ground-smoke {
-    animation: none;
-  }
 }
 
 /* ——— Tech ——— */
