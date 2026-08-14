@@ -61,6 +61,15 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Best Brightness Smart-POS",
+    type: "POS · Full-stack",
+    description:
+      "Point-of-sale system for Best Brightness — sales, stock, and store operations in a clean web app.",
+    tags: ["React", "POS", "Retail"],
+    url: "https://drpaks100.github.io/Smart-POS/",
+    image: "best-brightness",
+  },
+  {
     title: "Web & mobile application builds",
     type: "WIL · Internship · Academic",
     description:
