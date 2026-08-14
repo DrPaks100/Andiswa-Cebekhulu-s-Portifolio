@@ -18,6 +18,7 @@ import {
   SiDocker,
   SiLinux,
   SiFigma,
+  SiMongodb,
 } from "react-icons/si";
 import { TbBrandAdobePhotoshop, TbBrandCSharp, TbSql } from "react-icons/tb";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
@@ -29,6 +30,7 @@ import nodeLogo from "../assets/icons/nodejs-official.svg";
 import dockerLogo from "../assets/icons/docker-official.svg";
 import linuxLogo from "../assets/icons/linux-official.svg";
 import figmaLogo from "../assets/icons/figma-logo.png";
+import mongodbLogo from "../assets/icons/mongodb-logo.png";
 
 function CanvaMark({ size = 28 }) {
   return (
@@ -91,6 +93,7 @@ const map = {
   docker: SiDocker,
   linux: SiLinux,
   figma: SiFigma,
+  mongodb: SiMongodb,
 };
 
 const images = {
@@ -102,6 +105,7 @@ const images = {
   docker: dockerLogo,
   linux: linuxLogo,
   figma: figmaLogo,
+  mongodb: mongodbLogo,
 };
 
 export default function TechIcon({ name, size = 28, image }) {

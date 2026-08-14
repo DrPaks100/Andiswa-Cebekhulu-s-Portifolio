@@ -88,6 +88,7 @@ export const techStack = [
   { name: "Vite", icon: "vite", color: "#646CFF" },
   { name: "Node.js", icon: "nodejs", color: "#5FA04E", image: "nodejs" },
   { name: "MySQL", icon: "mysql", color: "#4479A1" },
+  { name: "MongoDB", icon: "mongodb", color: "#47A248", image: "mongodb" },
   { name: "SQL Server", icon: "sqlserver", color: "#CC2927" },
   { name: "Firebase", icon: "firebase", color: "#FFCA28" },
   { name: "Git", icon: "git", color: "#F05032", image: "git" },
