@@ -31,8 +31,8 @@ export default function Projects() {
               <motion.article
                 key={p.title}
                 className={`project${p.url ? " project--link" : ""}`}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.65, delay: 0.08 + i * 0.08 }}
               >
                 <div className="project__index" aria-hidden>
@@ -67,7 +67,9 @@ export default function Projects() {
                       )}
                     </div>
 
-                    <h2 className="project__title">{p.title}</h2>
+                    <h2 className="project__title">
+                      <span className="project__title-text">{p.title}</span>
+                    </h2>
                     <p className="project__desc">{p.description}</p>
                     <ul className="project__tags">
                       {p.tags.map((tag) => (

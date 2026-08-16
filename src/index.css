@@ -43,7 +43,8 @@ body {
   color: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* clip avoids the overflow-x:hidden → overflow-y:auto quirk that can crop glyphs */
+  overflow-x: clip;
 }
 
 img {

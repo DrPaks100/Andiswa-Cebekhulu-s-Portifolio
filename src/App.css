@@ -1179,13 +1179,19 @@
   font-size: clamp(1.2rem, 4.2vw, 1.7rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  /* Syne descenders (g, y, p) need extra line box room */
-  line-height: 1.45;
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.65rem;
+  overflow: visible;
+  line-height: 0;
+}
+
+/* Inline-block keeps Syne descenders (g/y/p) inside the paint box */
+.project__title-text {
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.55;
+  padding: 0.12em 0 0.28em;
   overflow: visible;
   overflow-wrap: break-word;
-  padding-top: 0.08em;
-  padding-bottom: 0.22em;
 }
 
 .project__desc {
