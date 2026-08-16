@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { profile } from "../data";
 
 export default function Footer() {
@@ -8,7 +9,12 @@ export default function Footer() {
         <p>
           © {year} {profile.name}
         </p>
-        <p className="footer__note">Navy · Black · White · Pebble</p>
+        <p className="footer__note">
+          Navy · Black · White · Pebble
+          <Link className="footer__studio" to="/studio">
+            Studio
+          </Link>
+        </p>
       </div>
     </footer>
   );

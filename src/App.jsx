@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import Design from "./pages/Design";
 import Contact from "./pages/Contact";
 import Cv from "./pages/CV";
+import Studio from "./pages/Studio";
 import "./App.css";
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="design" element={<Design />} />
           <Route path="contact" element={<Contact />} />
           <Route path="cv" element={<Cv />} />
+          <Route path="studio" element={<Studio />} />
         </Route>
       </Routes>
     </HashRouter>

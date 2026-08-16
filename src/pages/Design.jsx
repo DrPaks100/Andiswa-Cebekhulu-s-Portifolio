@@ -1,19 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { designSkills } from "../data";
-import { designs } from "../designs";
+import { designs as builtInDesigns } from "../designs";
+import { loadDesignGallery } from "../utils/designGallery";
 import TechIcon from "../components/TechIcon";
 import Lightbox from "../components/Lightbox";
 
 export default function Design() {
+  const [pieces, setPieces] = useState(builtInDesigns);
   const [active, setActive] = useState(null);
+
+  useEffect(() => {
+    let ignore = false;
+    loadDesignGallery().then((list) => {
+      if (!ignore) setPieces(list);
+    });
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const openAt = (index) => setActive(index);
   const close = () => setActive(null);
   const prev = () =>
-    setActive((i) => (i === null ? i : (i - 1 + designs.length) % designs.length));
+    setActive((i) => (i === null ? i : (i - 1 + pieces.length) % pieces.length));
   const next = () =>
-    setActive((i) => (i === null ? i : (i + 1) % designs.length));
+    setActive((i) => (i === null ? i : (i + 1) % pieces.length));
 
   return (
     <section className="section design">
@@ -46,7 +58,7 @@ export default function Design() {
         </ul>
 
         <div className="design__thumbs" role="list">
-          {designs.map((piece, i) => (
+          {pieces.map((piece, i) => (
             <motion.button
               key={piece.id}
               type="button"
@@ -67,11 +79,11 @@ export default function Design() {
 
       <Lightbox
         open={active !== null}
-        item={active !== null ? designs[active] : null}
+        item={active !== null ? pieces[active] : null}
         onClose={close}
         onPrev={prev}
         onNext={next}
-        hasMany={designs.length > 1}
+        hasMany={pieces.length > 1}
       />
     </section>
   );
